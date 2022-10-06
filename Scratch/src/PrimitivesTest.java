@@ -22,5 +22,15 @@ class PrimitivesTest {
 
         String quote = "What's up, \"Doc\"?";
         System.out.println(quote);
+
+        System.out.println();  //white space
+
+        int i = 18;
+        int j = i + 2;
+        System.out.println("The value of j is " + j);
+
+        i = 55;
+        System.out.println("The value of j is still " + j);
+
     }
 }
