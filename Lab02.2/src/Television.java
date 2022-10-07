@@ -9,7 +9,8 @@ class Television {
     private int volume = 50;
 
     //functions
-    void turnOn() {
+   public void turnOn() {
+       boolean isConnected = verifyInternetConnection();
         System.out.println("Turning on your " + getBrand() + " TV to volume " + getVolume());
     }
 
@@ -31,6 +32,10 @@ class Television {
 
     public void setVolume(int volume) {
         this.volume = volume;
+    }
+
+    private boolean verifyInternetConnection() {
+        return true; //fake implementation
     }
 
     public String toString() {

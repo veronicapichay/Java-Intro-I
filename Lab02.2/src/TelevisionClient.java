@@ -37,8 +37,8 @@ class TelevisionClient {
 
         //make tele 3 turn on/off
         tele3.turnOn();
-        tele2.turnOn();
 
+        System.out.println();
 
         tele1.turnOff();
         tele2.turnOff();
