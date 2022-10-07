@@ -5,15 +5,36 @@
 
 class Television {
     //properties or attributes - called "instance variables" or "fields"
-    String brand ="Toshiba";
-    int volume = 50;
+    private String brand ="Toshiba";
+    private int volume = 50;
 
     //functions
     void turnOn() {
-        System.out.println("Turning on your " + brand + " TV to volume " + volume);
+        System.out.println("Turning on your " + getBrand() + " TV to volume " + getVolume());
     }
 
     void turnOff() {
         System.out.println("Shutting down...goodbye!");
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public void setVolume(int volume) {
+        this.volume = volume;
+    }
+
+    public String toString() {
+        return "Television: Brand = " + getBrand() + ", Volume = " + getVolume();
+
     }
 }

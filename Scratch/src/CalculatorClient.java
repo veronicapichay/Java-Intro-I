@@ -17,7 +17,7 @@ class CalculatorClient {
 
         System.out.println();
 
-        int winner = calc.randomInt();
+        int winner = calc.randomInt(5, 80);
         System.out.println("The winner is: " + winner);
     }
 }

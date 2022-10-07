@@ -7,16 +7,23 @@ class Calculator {
 
     /**
      *
+     * Returns a random integer between min and max (inclusive) eg 5 to 80
      * Returns a random integer between 1 and 21 (inclusive)
+     *See a class called Math in document - Math.methodName();
      *
-     * See a class called Math in document - Math.methodName();
      * Methods are all static
      *
      */
 
-
-    int randomInt() {
+        int randomInt(int min, int max) {
         //declare a local variable
+        int result = 0;
+
+        return result;
+        }
+
+        int randomInt() {
+            //declare a local variable
         int result = 0;
 
         double rand = Math.random();  //0.00000 to 0.99999
@@ -24,22 +31,17 @@ class Calculator {
         result = (int) scaled;       //1 to 21
 
         return result;
+        }
 
-
-
-    }
-
-
-
-    int add(int a, int b) {
+        int add(int a, int b) {
         return a + b;
-    }
+        }
 
-    int sub(int a, int b) {
+         int sub(int a, int b) {
         return a-b;
-    }
+        }
 
-    boolean isEven(int value) {
+        boolean isEven(int value) {
         return value % 2 == 0;
     }
 }
