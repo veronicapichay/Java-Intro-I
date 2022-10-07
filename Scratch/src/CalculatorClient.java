@@ -14,5 +14,10 @@ class CalculatorClient {
         System.out.println("The difference is " + calc.sub(3, 5));
 
         System.out.println("The result is " + calc.isEven(10));
+
+        System.out.println();
+
+        int winner = calc.randomInt();
+        System.out.println("The winner is: " + winner);
     }
 }
