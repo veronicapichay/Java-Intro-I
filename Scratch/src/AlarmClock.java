@@ -6,6 +6,11 @@
 
 class AlarmClock {
 
+    //shared variables - independent of each object's bubble - does NOT change instance to instance
+    //do not expose it via getters/setters
+    public static final int MIN_INTERVAL = 1; //refactor rename if changing to final
+    public static final int MAX_INTERVAL = 20;
+
     //properties or characteristics - called "fields" or "instance variables"
     private int snoozeInterval = 5; //default value when client doesn't specify one (instead of 0)
     private int repeat; //number of times it goes off (default is 0)
@@ -38,12 +43,17 @@ class AlarmClock {
         return snoozeInterval;
     }
 
-    //TODO: implement business rule: incoming value must be [1, 20] (inclusive)
-    //writing
+    //business rule: incoming value must be [1, 20] (inclusive)
     public void setSnoozeInterval(int snoozeInterval) {
-        this.snoozeInterval = snoozeInterval;                        //this -> reference to self
 
-        //if (snoozeInterval > 5) && (snoozeInterval <= 20)
+        //to be in a valid state
+        if (snoozeInterval >= MIN_INTERVAL && snoozeInterval <= MAX_INTERVAL) {
+            this.snoozeInterval = snoozeInterval; //this -> reference to self
+        }
+        else {
+            System.out.println("Invalid snoozeInterval: " + snoozeInterval + ". " +
+                    "Pick numbers from "  + MIN_INTERVAL + " and " + MAX_INTERVAL);
+            }
     }
 
     public int getRepeat() {
@@ -56,7 +66,7 @@ class AlarmClock {
 
     //overrides superclass
     public String toString() {
-        return "AlarmClock: snoozeInterval = " + getSnoozeInterval() + "repeat = " + getRepeat();
+        return "AlarmClock: snoozeInterval = " + getSnoozeInterval() + " repeat = " + getRepeat();
     }
 
 

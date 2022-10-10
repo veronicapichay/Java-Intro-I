@@ -15,7 +15,7 @@ class AlarmClockClient {
         AlarmClock clock1 = new AlarmClock();
         //clock1.snoozeInterval = -7; //bad practice; giving client direct access
         //call the setter instead
-        clock1.setSnoozeInterval(7);
+        clock1.setSnoozeInterval(AlarmClock.MAX_INTERVAL); //longest in can possibly be
         clock1.setRepeat(5);
         clock1.snooze();
 
@@ -23,12 +23,12 @@ class AlarmClockClient {
         * create another AlarmClock object and set its properties, also
         * make each clock snooze
         */
-        AlarmClock clock2 = new AlarmClock(10, 10); //calls snoozeinterval repeat ctor
+        AlarmClock clock2 = new AlarmClock(10, 10); //calls snoozeInterval repeat ctor
         //clock2.setSnoozeInterval(10);
         clock2.snooze();
 
         //create a third instance, but this time don't set its snoozeInterval
-        AlarmClock clock3 = new AlarmClock();
+        AlarmClock clock3 = new AlarmClock(7, 10);
 
         //make clock 3 snooze
         clock3.snooze();
