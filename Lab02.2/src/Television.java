@@ -5,7 +5,7 @@
 
 class Television {
     //properties or attributes - called "instance variables" or "fields"
-    private String brand ="Toshiba";
+    private String brand = "Toshiba";
     private int volume = 50;
 
     //functions
