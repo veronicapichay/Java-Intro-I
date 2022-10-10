@@ -19,17 +19,18 @@ class TelevisionClient {
         tele1.setVolume(60);
         tele1.turnOn();
 
+
         /*
          * create an instance of Television (object) and set its properties
          * make each clock snooze
          */
 
-        Television tele2 = new Television();
+        Television tele2 = new Television("Sony", 20);
 //        tele2.brand = "Sony";
 //        tele2.volume = 50;
 
-        tele2.setBrand("RG");
-        tele2.setVolume(70);
+//        tele2.setBrand("RG");
+//        tele2.setVolume(70);
         tele2.turnOn();
 
         //create a third instance, but this time don't set its properties

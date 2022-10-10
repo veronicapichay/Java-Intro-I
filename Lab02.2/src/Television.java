@@ -8,6 +8,20 @@ class Television {
     private String brand = "Toshiba";
     private int volume = 50;
 
+    //empty ctor
+    public Television () {
+
+    }
+
+    public Television (String brand) {
+        setBrand(brand);
+    }
+
+    public Television (String brand, int volume) {
+        this(brand);
+        setVolume(volume);
+    }
+
     //functions
    public void turnOn() {
        boolean isConnected = verifyInternetConnection();
@@ -40,6 +54,5 @@ class Television {
 
     public String toString() {
         return "Television: Brand = " + getBrand() + ", Volume = " + getVolume();
-
     }
 }
