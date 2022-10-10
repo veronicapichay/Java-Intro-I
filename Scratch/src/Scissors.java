@@ -14,11 +14,18 @@ class Scissors {
     public Scissors(){
         //no op
     }
-    public Scissors (String color, double bladeLength, int sharpness, boolean isLefty){
+
+    public Scissors (String color, double bladeLength, int sharpness) {
+        //delegate to each setter to any validation/conversion
         setColor(color);
         setBladeLength(bladeLength);
         setSharpness(sharpness);
-        setLefty(isLefty);
+    }
+
+    //larger ctor calls smaller ctor
+    public Scissors (String color, double bladeLength, int sharpness, boolean isLefty){
+        this(color, bladeLength, sharpness); //delegate to the 3-argument ctor - being dealt by the ctor above; matching param
+        setLefty(isLefty);                   // deal with isLefty myself, by delegating to its setter
     }
 
     //business or action methods

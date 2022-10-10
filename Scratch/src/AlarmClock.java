@@ -8,10 +8,26 @@ class AlarmClock {
 
     //properties or characteristics - called "fields" or "instance variables"
     private int snoozeInterval = 5; //default value when client doesn't specify one (instead of 0)
+    private int repeat; //number of times it goes off (default is 0)
+
+    //constructor
+    public AlarmClock(){
+        //no op
+    }
+
+    public AlarmClock (int snoozeInterval) {
+        setSnoozeInterval(snoozeInterval); //delegate to setter for any validation/confirmation
+    }
+
+    public AlarmClock (int snoozeInterval, int repeat) {
+        this(snoozeInterval); //delegate 1 arg ctor for snoozeinterval
+        setRepeat(repeat); //handles repeat myself
+
+    }
 
     //functions or operations - called "methods" in Java
     //"business/action method"
-    void snooze() {
+    public void snooze() {
         System.out.println("Snoozing for " + getSnoozeInterval() + " minutes");
     }
 
@@ -30,9 +46,17 @@ class AlarmClock {
         //if (snoozeInterval > 5) && (snoozeInterval <= 20)
     }
 
+    public int getRepeat() {
+        return repeat;
+    }
+
+    public void setRepeat(int repeat) {
+        this.repeat = repeat;
+    }
+
     //overrides superclass
     public String toString() {
-        return "AlarmClock: snoozeInterval = " + getSnoozeInterval();
+        return "AlarmClock: snoozeInterval = " + getSnoozeInterval() + "repeat = " + getRepeat();
     }
 
 

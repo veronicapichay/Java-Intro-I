@@ -16,14 +16,15 @@ class AlarmClockClient {
         //clock1.snoozeInterval = -7; //bad practice; giving client direct access
         //call the setter instead
         clock1.setSnoozeInterval(7);
+        clock1.setRepeat(5);
         clock1.snooze();
 
         /*
         * create another AlarmClock object and set its properties, also
         * make each clock snooze
         */
-        AlarmClock clock2 = new AlarmClock();
-        clock2.setSnoozeInterval(10);
+        AlarmClock clock2 = new AlarmClock(10, 10); //calls snoozeinterval repeat ctor
+        //clock2.setSnoozeInterval(10);
         clock2.snooze();
 
         //create a third instance, but this time don't set its snoozeInterval
