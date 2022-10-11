@@ -29,31 +29,32 @@ class Camera {
 
     void takePicture() {
 
-
     }
 
     void focus () {
 
-
     }
 
     void adjustAperture () {
-
 
     }
 
 
     void rewind() {
 
-
     }
 
     void attachFlash () {
 
+    }
 
+    void click () {
 
     }
 
+    void reloadFilm () {
+
+    }
     //accessor methods (getter/setter)
 
 
