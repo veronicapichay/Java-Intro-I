@@ -15,13 +15,11 @@ class CameraClient {
 //    cam1.setWithFlash();
 //    System.out.println(cam1);
 
-    Camera cam1 = new Camera("Nikon", 700, 5.6, 1000, 800, true);
+    Camera cam1 = new Camera();
+    cam1.setBrand("Nikon");
+    cam1.setLens(60);
     System.out.println(cam1);
 
-    Camera cam2 = new Camera("Olympus", 40, 2.8, 200, 200, false);
-    System.out.println(cam2);
 
-    Camera cam3 = new Camera("K1000", 50, 1.4, 500, 400, false);
-    System.out.println(cam3);
     }
 }

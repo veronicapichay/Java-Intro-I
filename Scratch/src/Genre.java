@@ -1,3 +1,5 @@
+//Genre is immutable
+
 enum Genre {
 
     ACTION("Action"),
@@ -15,7 +17,7 @@ enum Genre {
 
     Genre(String display) {
         this.display = display;
-        System.out.println("Genre ctor called");
+        //System.out.println("Genre ctor called");
     }
 
     public String getDisplay() {

@@ -7,24 +7,33 @@ class Camera {
     //attributes
     private String brand;
     private int lens;
+    private double price;
     private double aperture;  //[1.4, 2, 2.8, 4, 5.6, 8, 11, 16]
     private int shutterSpeed;
     private int filmISO;
     private boolean withFlash;
 
     //constructor
-    public Camera () {
-        //no operations
+    public Camera() {
+
     }
 
-    public Camera (String brand, int lens, double aperture, int shutterSpeed, int filmISO, boolean withFlash) {
+
+    public Camera (String brand) {
         setBrand(brand);
-        setLens(lens);
-        setAperture(aperture);
-        setShutterSpeed(shutterSpeed);
-        setFilmISO(filmISO);
-        setWithFlash(withFlash);
     }
+
+    public Camera (String brand, int lens) {
+        this(brand);
+        setLens(lens);
+
+    }
+
+    public Camera (String brand, int lens, double price) {
+        this(brand, lens);
+        setPrice(price);
+    }
+
     //business methods
 
     void takePicture() {
@@ -44,9 +53,6 @@ class Camera {
 
     }
 
-    void attachFlash () {
-
-    }
 
     void click () {
 
@@ -64,6 +70,14 @@ class Camera {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public int getLens() {

@@ -11,12 +11,17 @@ class Movie {
         setTitle(title);
     }
 
+    public Movie (String title, Genre genre) {
+        this(title);
+        setGenre(genre);
+    }
+
     public Movie(String title, Integer releaseYear, Double revenue, Rating rating, Genre genre) {
-       this(title); //delegates to title only constructor
+       this(title, genre); //delegates to title only constructor
        setReleaseYear(releaseYear);
        setRevenue(revenue);
        setRating(rating);
-       setGenre(genre);
+
     }
 
     //action methods - play(), pause(), rewind(), fastForward(), skipTo()
@@ -69,8 +74,4 @@ class Movie {
                 ", Rating = " + getRating() +
                 ", Genre = " + getGenre();
     }
-
-
-
-
 }
