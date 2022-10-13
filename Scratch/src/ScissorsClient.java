@@ -1,6 +1,7 @@
 class ScissorsClient {
 
     public static void main(String[] args) {
+
         Scissors s1 = new Scissors();
         s1.setColor("red");
         s1.setBladeLength(5.5);

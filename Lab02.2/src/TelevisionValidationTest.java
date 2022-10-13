@@ -17,7 +17,7 @@ class TelevisionValidationTest {
         tv1.setVolume(100); //valid - no error message and the 1 should stick
         System.out.println(tv1.getVolume());
 
-        tv1.setVolume(-1); //valid - no error message and the 1 should stick
+        tv1.setVolume(-1); //invalid error message
         System.out.println(tv1.getVolume());
 
         tv1.setVolume(101); //valid - no error message and the 1 should stick
@@ -38,7 +38,8 @@ class TelevisionValidationTest {
         tv2.setBrand("Toshiba"); //valid - no error message and the 1 should stick
         System.out.println(tv2.getBrand());
 
-        tv2.setBrand("Vizio"); //valid - no error message and the 1 should stick
+        tv2.setBrand("Vizio"); //invalid error message
         System.out.println(tv2.getBrand());
+
     }
 }

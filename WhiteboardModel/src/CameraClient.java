@@ -20,6 +20,10 @@ class CameraClient {
     cam1.setLens(60);
     System.out.println(cam1);
 
+    Camera cam2 = new Camera("K100");
+    cam2.setLens(50);
+    System.out.println(cam2);
+
 
     }
 }

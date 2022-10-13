@@ -9,6 +9,7 @@ class Television {
     public static final int MIN_VOLUME = 0;
     public static final int MAX_VOLUME = 100;
     private static int instanceCount = 0;
+    public static final String[] VALID_BRANDS = { "Samsung", "LG", "Sony", "Toshiba" }; //should be an enum, no validation required
 
     public static int getInstanceCount() {
         return instanceCount;
@@ -47,7 +48,7 @@ class Television {
         System.out.println("Turning on your " + getBrand() + " TV to volume " + getVolume());
     }
 
-    void turnOff() {
+    public void turnOff() {
         System.out.println("Shutting down...goodbye!");
     }
 
@@ -72,13 +73,22 @@ class Television {
     }
 
     public void setBrand(String brand) {
-        if (brand.equals("Samsung") || brand.equals("Sony") || brand.equals("LG") || brand.equals("Toshiba")) {
+        if (isValid(brand)) {
             this.brand = brand;
         }
         else {
-            System.out.println("Invalid brand: " + brand + ". " +
-                    "You only have 4 choices: Samsung/Sony/LG/Toshiba");
+            System.out.println("Invalid brand: " + brand + ". " + "You only have 4 choices: Samsung/Sony/LG/Toshiba");
         }
+    }
+
+    //Sony, Samsung, LG, Toshiba
+    private static boolean isValid (String brand) {
+        for (String validBrand : VALID_BRANDS) {
+            if (brand.equals(validBrand)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public int getVolume() {
@@ -91,8 +101,7 @@ class Television {
             this.isMuted = false;
         }
         else {
-            System.out.println("Invalid volume: " + volume + ". " +
-                    "Select volume from "  + MIN_VOLUME + " and " + MAX_VOLUME);
+            System.out.printf("Invalid volume : %s. Select volume from %s and %s. \n", volume, MIN_VOLUME, MAX_VOLUME );
         }
     }
 

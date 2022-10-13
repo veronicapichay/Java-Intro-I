@@ -8,7 +8,7 @@
 
 class Instructor {
 
-    public void doubleIt(int value) {
+    public void doubleIt(int value) { //final makes no changing the value
         value *= 2;  // value = value * 2
         System.out.println("Instructor: I have doubled the value to now be " + value);
     }
@@ -17,7 +17,7 @@ class Instructor {
      * NOTE: this method will modify the state of the Marker passed in to be blue.
      * You've been warned!
      */
-    public void writeOnBoard(Marker marker, String message) {
+    public void writeOnBoard(final Marker marker, String message) { //no changing it but you can call setters / can change state can't change where is pointing
         marker.setColor("blue");  // HA!  Whatever it was before, it's blue now!
         System.out.println("Instructor: writing '" + message + "' on the board");
     }

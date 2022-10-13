@@ -14,6 +14,9 @@
  */
 import java.time.*;
 import java.time.format.*;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
+
 import static java.time.temporal.TemporalAdjusters.*;
 
 class DerivedDateTimeTest {
@@ -23,12 +26,12 @@ class DerivedDateTimeTest {
      * To run one test method at a time, uncomment the call to the one you want to execute.
      */
     public static void main(String[] args) {
-        // testPresidentsFirst100Days();
-        // testPopularBirthdays();
-        // testEarlyRetirement();
-        // testLaborDay();
-        // testElectionDay();
-        // testAnniversary();
+         //testPresidentsFirst100Days();
+         //testPopularBirthdays();
+         //testEarlyRetirement();
+        //testLaborDay();
+        //testElectionDay();
+         testAnniversary();
     }
 
     /**
@@ -38,7 +41,14 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testPresidentsFirst100Days() {
-        // TODO
+
+        LocalDate inauguration  = LocalDate.of(2017, 1, 20);
+        LocalDate deadline = inauguration.plusDays(100);
+        System.out.println(deadline);
+
+
+
+
     }
 
     /**
@@ -62,7 +72,12 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testEarlyRetirement() {
-        // TODO
+
+        LocalDate bday = LocalDate.of(1988, 5, 12);
+        LocalDate retirement = bday.plusYears(50).plusMonths(6);
+        System.out.println(retirement);
+        System.out.println(retirement.getDayOfWeek());
+
     }
 
     /**
@@ -73,7 +88,14 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testLaborDay() {
-        // TODO
+        LocalDate sept1 = LocalDate.of(1988, 9, 1);
+        LocalDate laborDay = sept1.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY));
+        System.out.println(laborDay);
+        System.out.println(laborDay.getDayOfWeek());
+
+
+
+
     }
 
     /**
@@ -83,7 +105,14 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testElectionDay() {
-        // TODO
+
+        LocalDate nov1 = LocalDate.of(2024, 11, 1);
+        LocalDate election = nov1.with(TemporalAdjusters.firstInMonth(DayOfWeek.MONDAY)).plusDays(1);
+        System.out.println(election);
+
+
+
+
     }
 
     /**
@@ -95,6 +124,10 @@ class DerivedDateTimeTest {
      * RESULT:
      */
     public static void testAnniversary() {
-        // TODO
+
+
+
+
+
     }
 }

@@ -5,7 +5,7 @@
 
 class Camera {
     //attributes
-    private String brand;
+    private String brand = "K100";
     private int lens;
     private double price;
     private double aperture;  //[1.4, 2, 2.8, 4, 5.6, 8, 11, 16]
@@ -36,29 +36,33 @@ class Camera {
 
     //business methods
 
-    void takePicture() {
+    public void takePicture() {
 
     }
 
-    void focus () {
+    public void focus () {
 
     }
 
-    void adjustAperture () {
-
-    }
-
-
-    void rewind() {
+    public void adjustAperture () {
 
     }
 
 
-    void click () {
+    public void rewind() {
 
     }
 
-    void reloadFilm () {
+    public void isEmpty() {
+
+
+    }
+
+    public void click () {
+
+    }
+
+    public void reloadFilm () {
 
     }
     //accessor methods (getter/setter)
@@ -123,11 +127,12 @@ class Camera {
     @Override
     public String toString() {
         return "Camera " +
-                "brand = " + getBrand() +
-                ", lens = " + getLens() +
-                ", aperture = " + getAperture() +
-                ", shutterSpeed = " + getShutterSpeed() +
-                ", filmISO = " + getFilmISO() +
-                ", withFlash = " + isWithFlash();
+                "brand = " + brand  +
+                ", lens = " + lens +
+                ", price = " + price +
+                ", aperture = " + aperture +
+                ", shutterSpeed = " + shutterSpeed +
+                ", filmISO = " + filmISO +
+                ", withFlash = " + withFlash;
     }
 }
