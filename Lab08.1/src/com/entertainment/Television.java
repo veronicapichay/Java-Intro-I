@@ -21,7 +21,7 @@ public class Television {
     private int volume = 50;
     private DisplayType display = DisplayType.LED; //would be null if given no value
 
-    //Televison HAS-A Tuner
+    //Television HAS-A Tuner
     private Tuner tuner = new Tuner();
     private boolean isMuted; //for muting behavior
     private int oldVolume;  // internal use only, not exposed, no setter.getter

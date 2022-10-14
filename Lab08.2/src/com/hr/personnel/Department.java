@@ -22,11 +22,11 @@ package com.hr.personnel;
  *   void workEmployees()  make all employees in the department work.
  *   String toString()     self-explanatory.
  */
-public class Department {
+public class Department { //a dept object has many emp working in 1 dept - 1 to many relationship
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100];
+    private Employee[] employees = new Employee[100]; //will change to collection next week
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
