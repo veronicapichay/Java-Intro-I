@@ -1,3 +1,4 @@
+package org.organisms;
 /*
  * An immutable class
  * More correct = tje class definition is written in such a way that

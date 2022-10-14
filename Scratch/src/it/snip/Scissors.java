@@ -1,8 +1,8 @@
-/*
+package it.snip;/*
  * Constructors
  */
 
-class Scissors {
+public class Scissors {
     //fields or instance variables
     private String color;
     private double bladeLength;
@@ -30,6 +30,10 @@ class Scissors {
 
     //business or action methods
     //cut(), poke(), sharpen(), trim(), stab()
+
+    public void cut () {
+        System.out.printf("The %s scissors is cutting ", getColor());
+    }
 
     //accessor methods (get and set)
     public String getColor() {

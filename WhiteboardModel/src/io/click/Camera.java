@@ -1,9 +1,9 @@
-/*
+package io.click;/*
  *
  *
  */
 
-class Camera {
+public class Camera {
     //attributes
     private String brand = "K100";
     private int lens;

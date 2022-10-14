@@ -1,3 +1,5 @@
+package net.experiments;
+
 import java.util.Arrays;
 
 class ArraysTest {

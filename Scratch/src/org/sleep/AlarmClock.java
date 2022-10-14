@@ -1,4 +1,4 @@
-/*
+package org.sleep;/*
  * Class definition to model the workings of an alarm clock.
  * This class does NOT have a main () method (most classes don't).
  * This is often called a "business" class or "system" class.

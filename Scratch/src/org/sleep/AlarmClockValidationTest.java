@@ -1,8 +1,10 @@
-/*
+package org.sleep;/*
  *  Test class focus on validation logic of snoozeInterval in the setter
  *  Boundary Value Testing (BVT): for a range of values [1, 20] we need to test:
  *  0, 1 and 20, 21
  */
+
+import org.sleep.AlarmClock;
 
 class AlarmClockValidationTest {
 

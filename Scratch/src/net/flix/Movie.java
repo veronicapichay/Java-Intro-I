@@ -1,3 +1,9 @@
+package net.flix;
+
+import it.snip.Scissors;
+import net.flix.Genre;
+
+
 class Movie {
 
     private String title;
@@ -25,6 +31,11 @@ class Movie {
     }
 
     //action methods - play(), pause(), rewind(), fastForward(), skipTo()
+
+    public void edit() {
+        Scissors snipper = new Scissors();
+        snipper.cut();
+    }
 
     //accessor
     public String getTitle() {

@@ -1,3 +1,8 @@
+package net.flix;
+
+import net.flix.Genre;
+import net.flix.Movie;
+
 class MovieClient {
 
     public static void main(String[] args) {

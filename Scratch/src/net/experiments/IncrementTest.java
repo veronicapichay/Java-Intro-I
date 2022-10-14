@@ -1,3 +1,5 @@
+package net.experiments;
+
 class IncrementTest {
     public static void main(String[] args) {
         int x = 3;

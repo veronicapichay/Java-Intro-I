@@ -1,3 +1,5 @@
+package it.snip;
+
 class ScissorsClient {
 
     public static void main(String[] args) {
@@ -11,5 +13,7 @@ class ScissorsClient {
 
         Scissors s2 = new Scissors("orange", 7.5, 10); //calling the 3 arg ctor
         System.out.println(s2); //toString() automatically called
+
+        s2.cut();
     }
 }

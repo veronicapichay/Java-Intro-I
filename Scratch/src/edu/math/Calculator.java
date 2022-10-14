@@ -1,4 +1,4 @@
-/*
+package edu.math;/*
  * Class which contains several functions (methods) to do some basic calculations.
  * business class
  * All-static class is one that has nothing except static methods

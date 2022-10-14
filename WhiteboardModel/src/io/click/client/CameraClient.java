@@ -1,7 +1,9 @@
-/*
+package io.click.client;/*
  *
  *
  */
+
+import io.click.Camera;
 
 class CameraClient {
     public static void main(String[] args) {

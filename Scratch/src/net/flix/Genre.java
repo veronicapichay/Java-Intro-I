@@ -1,4 +1,4 @@
-//Genre is immutable
+package net.flix;//Genre is immutable
 
 enum Genre {
 

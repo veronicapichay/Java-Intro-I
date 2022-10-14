@@ -1,4 +1,4 @@
-/*
+package org.sleep;/*
  * Client-side "main-class" (a class with the main() method).
  * Create a few AlarmClock objects and give them a basic test-drive
  */
