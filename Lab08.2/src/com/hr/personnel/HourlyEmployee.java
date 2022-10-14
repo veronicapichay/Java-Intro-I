@@ -8,13 +8,30 @@ public class HourlyEmployee extends Employee {
 
     //inherited ctor
     public HourlyEmployee() {
+        //ctor chaining
+        super();
     }
 
-    public HourlyEmployee(String name, LocalDate hireDate, double rate, double hours) {
+    public HourlyEmployee(String name, LocalDate hireDate) {
         super(name, hireDate);
     }
 
+
+    public HourlyEmployee(String name, LocalDate hireDate, double rate, double hours) {
+        this(name, hireDate);
+        setRate(rate);
+        setHours(hours);
+    }
+
     //accessor
+    public void setRate(double rate) {
+        this.rate = rate;
+    }
+
+    public void setHours(double hours) {
+        this.hours = hours;
+    }
+
     public double getRate() {
         return rate;
     }

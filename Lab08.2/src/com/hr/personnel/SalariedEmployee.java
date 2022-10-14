@@ -7,15 +7,27 @@ public class SalariedEmployee extends Employee {
 
     //inherited ctor
     public SalariedEmployee() {
+
+    }
+
+    public SalariedEmployee(String name, LocalDate hireDate) {
+        super(name, hireDate);
     }
 
     public SalariedEmployee(String name, LocalDate hireDate, double salary) {
-        super(name, hireDate);
+        this(name, hireDate);
+        setSalary(salary);
     }
+
+
 
     //accessor
     public double getSalary() {
         return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
     @Override
