@@ -11,14 +11,14 @@ import java.util.EnumMap;
 class CameraClient {
     public static void main(String[] args) {
 
-        EnumMap<WeatherType, String> enumMap = new EnumMap<WeatherType, String>(WeatherType.class);
-
-        enumMap.put(WeatherType.SNOWSAND,"f22");
-        enumMap.put(WeatherType.SUNNY, "f16");
-        enumMap.put(WeatherType.SLIGHTOVERCAST, "f11");
-        enumMap.put(WeatherType.OVERCAST, "f8");
-        enumMap.put(WeatherType.CLOUDY, "f5.6");
-        enumMap.put(WeatherType.SUNSET, "f4");
+//        EnumMap<WeatherType, String> enumMap = new EnumMap<WeatherType, String>(WeatherType.class);
+//
+//        enumMap.put(WeatherType.SNOWSAND,"f22");
+//        enumMap.put(WeatherType.SUNNY, "f16");
+//        enumMap.put(WeatherType.SLIGHTOVERCAST, "f11");
+//        enumMap.put(WeatherType.OVERCAST, "f8");
+//        enumMap.put(WeatherType.CLOUDY, "f5.6");
+//        enumMap.put(WeatherType.SUNSET, "f4");
 
 
 

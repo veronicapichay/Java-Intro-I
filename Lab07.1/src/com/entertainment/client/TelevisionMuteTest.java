@@ -20,6 +20,5 @@ class TelevisionMuteTest {
 
         tv.setVolume(70);
         System.out.println(tv);
-
     }
 }

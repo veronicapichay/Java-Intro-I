@@ -14,10 +14,9 @@ public class Camera {
     private String brand = "K100";
     private int lens;
     private double price;
-    private int filmISO = 400;
     private int capacity;
     private String aperture;
-    private WeatherType weather = WeatherType.SUNNY;
+    private final WeatherType weather = WeatherType.SUNNY;
     private boolean isEmpty;
     private int oldCapacity;
 
@@ -32,9 +31,9 @@ public class Camera {
         setBrand(brand);
     }
 
-    public Camera (String brand, int lens) {
+    public Camera (String brand, int capacity) {
         this(brand);
-        setLens(lens);
+        setCapacity(capacity);
 
     }
 
@@ -43,10 +42,7 @@ public class Camera {
         setPrice(price);
     }
 
-
-
-    //business methods
-    public void takePicture(WeatherType weather, String aperture) {
+    public void takePicture() {
 
 
     }
@@ -56,12 +52,12 @@ public class Camera {
 
     }
 
-    public void rewind() {
+    public void empty() {
         if (!isEmpty()) {
             oldCapacity = getCapacity();
             capacity = 0;
             isEmpty = true;
-            System.out.println("You'");
+
         }
         else {
             setCapacity(oldCapacity);
@@ -71,7 +67,7 @@ public class Camera {
         System.out.println();
     }
 
-    //accessor methods (getter/setter)
+
     public String getBrand() {
         return brand;
     }
@@ -100,10 +96,37 @@ public class Camera {
         return aperture;
     }
 
-    public void setAperture(String aperture) {
-        this.aperture = aperture;
+    public String setAperture(String aperture) {
+        switch (weather) {
+            case SNOWSAND:
+                setAperture("f22");
+                System.out.println("Click!");
+                break;
+            case SUNNY:
+                setAperture("f16");
+                System.out.println("Click!");
+                break;
+            case SLIGHTOVERCAST:
+                setAperture("f11");
+                System.out.println("Click!");
+                break;
+            case OVERCAST:
+                setAperture("f8");
+                System.out.println("Click!");
+                break;
+            case CLOUDY:
+                setAperture("f5.6");
+                System.out.println("Click!");
+                break;
+            case SUNSET:
+                setAperture("f4");
+                System.out.println("Click!");
+                break;
+            default:
+                System.out.println("WARNING! Please follow Sunny 16 Rule!");
+        }
+        return aperture;
     }
-
     public int getCapacity() {
         return capacity;
     }
@@ -118,17 +141,11 @@ public class Camera {
         }
     }
 
-    public int getFilmISO() {
-        return filmISO;
-    }
-
-    public void setFilmISO(int filmISO) {
-        this.filmISO = filmISO;
-    }
-
     @Override
     public String toString() {
-        return "Your " + getBrand() + " camera " + " with " + getLens() + "mm lens has " + getCapacity() + "shots left";
+
+        String capacityString = isEmpty() ? "<empty>" : String.valueOf(getCapacity());
+        return "Your " + getBrand() + " camera " + " with " + getLens() + "mm lens has " + capacityString + " shots left";
 
     }
 }
