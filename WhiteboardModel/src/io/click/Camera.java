@@ -3,17 +3,26 @@ package io.click;/*
  *
  */
 
+import java.util.EnumMap;
+
 public class Camera {
+
+    public static final int MIN_SHOTS = 1;
+    public static final int MAX_SHOTS = 36;
+
     //attributes
     private String brand = "K100";
     private int lens;
     private double price;
-    private double aperture;  //[1.4, 2, 2.8, 4, 5.6, 8, 11, 16]
-    private int shutterSpeed;
-    private int filmISO;
-    private boolean withFlash;
+    private int filmISO = 400;
+    private int capacity;
+    private String aperture;
+    private WeatherType weather = WeatherType.SUNNY;
+    private boolean isEmpty;
+    private int oldCapacity;
 
     //constructor
+
     public Camera() {
 
     }
@@ -34,40 +43,35 @@ public class Camera {
         setPrice(price);
     }
 
+
+
     //business methods
+    public void takePicture(WeatherType weather, String aperture) {
 
-    public void takePicture() {
-
-    }
-
-    public void focus () {
 
     }
 
-    public void adjustAperture () {
+    public boolean isEmpty() {
+        return isEmpty;
 
     }
-
 
     public void rewind() {
+        if (!isEmpty()) {
+            oldCapacity = getCapacity();
+            capacity = 0;
+            isEmpty = true;
+            System.out.println("You'");
+        }
+        else {
+            setCapacity(oldCapacity);
+            isEmpty = false;
+        }
 
+        System.out.println();
     }
 
-    public void isEmpty() {
-
-
-    }
-
-    public void click () {
-
-    }
-
-    public void reloadFilm () {
-
-    }
     //accessor methods (getter/setter)
-
-
     public String getBrand() {
         return brand;
     }
@@ -92,20 +96,26 @@ public class Camera {
         this.lens = lens;
     }
 
-    public double getAperture() {
+    public String getAperture() {
         return aperture;
     }
 
-    public void setAperture(double aperture) {
+    public void setAperture(String aperture) {
         this.aperture = aperture;
     }
 
-    public int getShutterSpeed() {
-        return shutterSpeed;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setShutterSpeed(int shutterSpeed) {
-        this.shutterSpeed = shutterSpeed;
+    public void setCapacity(int capacity) {
+        if (capacity >= MIN_SHOTS && capacity <= MAX_SHOTS) {
+            this.capacity = capacity;
+            this.isEmpty = false;
+        }
+        else {
+            System.out.printf("Sorry! You ran out of film : %s. Capacity is between %s and %s. \n", capacity, MIN_SHOTS, MAX_SHOTS);
+        }
     }
 
     public int getFilmISO() {
@@ -116,23 +126,9 @@ public class Camera {
         this.filmISO = filmISO;
     }
 
-    public boolean isWithFlash() {
-        return withFlash;
-    }
-
-    public void setWithFlash(boolean withFlash) {
-        this.withFlash = withFlash;
-    }
-
     @Override
     public String toString() {
-        return "Camera " +
-                "brand = " + brand  +
-                ", lens = " + lens +
-                ", price = " + price +
-                ", aperture = " + aperture +
-                ", shutterSpeed = " + shutterSpeed +
-                ", filmISO = " + filmISO +
-                ", withFlash = " + withFlash;
+        return "Your " + getBrand() + " camera " + " with " + getLens() + "mm lens has " + getCapacity() + "shots left";
+
     }
 }
