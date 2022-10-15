@@ -1,40 +1,27 @@
-package io.click;/*
- *
- *
- */
-
-import java.util.EnumMap;
+package io.click;
 
 public class Camera {
 
     public static final int MIN_SHOTS = 1;
     public static final int MAX_SHOTS = 36;
 
-    //attributes
-    private String brand = "K100";
-    private int lens;
+    public static final String[] BRANDS = { "Fuji", "Leica", "Nikon", "Canon" };
+    private String brand = "Rollei";
+    private int lens = 300;
     private double price;
     private int capacity;
-    private String aperture;
-    private final WeatherType weather = WeatherType.SUNNY;
+    private ApertureTypes aperture = ApertureTypes.F4;
+    private WeatherType weather = WeatherType.SUNNY;
     private boolean isEmpty;
     private int oldCapacity;
 
-    //constructor
-
     public Camera() {
-
     }
 
-
-    public Camera (String brand) {
+    public Camera (String brand, int lens) {
+        this();
         setBrand(brand);
-    }
-
-    public Camera (String brand, int capacity) {
-        this(brand);
-        setCapacity(capacity);
-
+        setLens(lens);
     }
 
     public Camera (String brand, int lens, double price) {
@@ -42,14 +29,25 @@ public class Camera {
         setPrice(price);
     }
 
+    public Camera (String brand,int lens, int price, int capacity, WeatherType weather, ApertureTypes aperture) {
+        this(brand, lens, price);
+        setCapacity(capacity);
+        setWeather(weather);
+        setAperture(aperture);
+    }
+
     public void takePicture() {
-
-
+        if(isValid(aperture) && !isEmpty()) {
+            System.out.println("Your " + getBrand() + " camera " + " with " + getLens() + "mm lens is ready to use");
+            System.out.println("CLICK!");
+        }
+        else {
+            System.out.println("Please load a fresh film!");
+        }
     }
 
     public boolean isEmpty() {
         return isEmpty;
-
     }
 
     public void empty() {
@@ -57,16 +55,13 @@ public class Camera {
             oldCapacity = getCapacity();
             capacity = 0;
             isEmpty = true;
-
         }
         else {
             setCapacity(oldCapacity);
             isEmpty = false;
         }
-
-        System.out.println();
+        System.out.println("Reload!");
     }
-
 
     public String getBrand() {
         return brand;
@@ -92,40 +87,26 @@ public class Camera {
         this.lens = lens;
     }
 
-    public String getAperture() {
-        return aperture;
+    public void setAperture(ApertureTypes aperture) {
+        if (isValid(aperture)) {
+        this.aperture = aperture;
+    }
+        else {
+            System.out.println("WARNING! Aperture " + aperture + " is not suitable for this weather." + " Please follow Sunny 16 Rule!");
+        }
     }
 
-    public String setAperture(String aperture) {
-        switch (weather) {
-            case SNOWSAND:
-                setAperture("f22");
-                System.out.println("Click!");
-                break;
-            case SUNNY:
-                setAperture("f16");
-                System.out.println("Click!");
-                break;
-            case SLIGHTOVERCAST:
-                setAperture("f11");
-                System.out.println("Click!");
-                break;
-            case OVERCAST:
-                setAperture("f8");
-                System.out.println("Click!");
-                break;
-            case CLOUDY:
-                setAperture("f5.6");
-                System.out.println("Click!");
-                break;
-            case SUNSET:
-                setAperture("f4");
-                System.out.println("Click!");
-                break;
-            default:
-                System.out.println("WARNING! Please follow Sunny 16 Rule!");
+    public String getAperture() {
+        return String.valueOf(aperture);
+    }
+
+    private static boolean isValid(ApertureTypes aperture) {
+        for (ApertureTypes a: ApertureTypes.values() ) {
+            if (aperture.equals(aperture)) {
+                return true;
+            }
         }
-        return aperture;
+        return false;
     }
     public int getCapacity() {
         return capacity;
@@ -141,11 +122,16 @@ public class Camera {
         }
     }
 
+    public WeatherType getWeather() {
+        return weather;
+    }
+
+    public void setWeather(WeatherType weather) {
+        this.weather = weather;
+    }
+
     @Override
     public String toString() {
-
-        String capacityString = isEmpty() ? "<empty>" : String.valueOf(getCapacity());
-        return "Your " + getBrand() + " camera " + " with " + getLens() + "mm lens has " + capacityString + " shots left";
-
+        return "Brand = " + getBrand() + ", Lens: " + getLens() + " Price:  = " + getPrice();
     }
 }

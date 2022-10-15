@@ -22,28 +22,28 @@ class TelevisionClient {
         tele1.setDisplay(DisplayType.PLASMA);
         tele1.turnOn();
 
-        Television tele2 = new Television("Sony", 50, DisplayType.OLED);
-        tele2.turnOn();
-
-        Television tele3 = new Television("LG");
-        tele3.turnOn();
-
-        System.out.println();
-
-        tele1.turnOff();
-        tele2.turnOff();
-        tele3.turnOff();
-
-        System.out.println();
-
-        //display toString() method
-        System.out.println(tele1.toString());
-        System.out.println(tele2.toString());
-        System.out.println(tele3);
-
-        System.out.println();
-
-        System.out.println(Television.getInstanceCount() + " instances");
+//        Television tele2 = new Television("Sony", 50, DisplayType.OLED);
+//        tele2.turnOn();
+//
+//        Television tele3 = new Television("LG");
+//        tele3.turnOn();
+//
+//        System.out.println();
+//
+//        tele1.turnOff();
+//        tele2.turnOff();
+//        tele3.turnOff();
+//
+//        System.out.println();
+//
+//        //display toString() method
+//        System.out.println(tele1.toString());
+//        System.out.println(tele2.toString());
+//        System.out.println(tele3);
+//
+//        System.out.println();
+//
+//        System.out.println(Television.getInstanceCount() + " instances");
 
     }
 }
