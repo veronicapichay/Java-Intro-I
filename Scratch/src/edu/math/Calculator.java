@@ -6,17 +6,29 @@ package edu.math;/*
  */
 
 class Calculator {
-
-
-
     /**
+     *Return the average (mean) of the supplied integers
+     * Note: Require that the client pass at least 1 value
      *
+     */
+    public static double average(int first, int...rest) { //3,4,8,8
+        double result = 0.0;
+        double sum = first;
+
+        for (int value: rest) {
+            sum += value; //sum = sum + value
+        }
+
+        result = sum / (rest.length + 1);
+        //result = sum / values.length;
+        return result;
+    }
+
+     /**
      * Returns a random integer between min and max (inclusive) eg 5 to 80
      * Returns a random integer between 1 and 21 (inclusive)
      * See a class called Math in document - Math.methodName();
-     *
      * Methods are all static
-     *
      */
 
         public static int randomInt(int min, int max) {
