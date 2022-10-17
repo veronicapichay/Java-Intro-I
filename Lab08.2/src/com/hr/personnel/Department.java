@@ -61,6 +61,28 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
         }
     }
 
+    /*
+     * Department "forced vacation" due to office closure
+     * For emp that takes vacation, make them take vacation
+     */
+
+    public void holidayBreak() {
+        for (int i = 0; i < currentIndex; i++) {
+            //emp[i] is a reference of type Employee, can only call Employee methods
+
+            //NOTE: We must to a "type check" before blindly downcasting
+            if (employees[i] instanceof SalariedEmployee) { //this is an IS-A check, or match
+                //downcast and method call combined - better if 1 method call
+                ((SalariedEmployee) employees[i]).takeVacation();
+
+                //downcast this Employee reference to more specific type SalariedEmployee
+                //better if calling multiple methods
+                //SalariedEmployee semp = (SalariedEmployee) employees[i];
+                //semp.takeVacation();
+            }
+        }
+    }
+
     // helper method to add an Employee to the array
     public void addEmployee(Employee emp) {
         employees[currentIndex++] = emp;
