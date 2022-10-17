@@ -26,14 +26,16 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
     // fields
     private String name;
     private String location;
-    private Employee[] employees = new Employee[100]; //will change to collection next week
+    private final Employee[] employees = new Employee[100]; //will change to collection next week
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
     public Department() {
+        super();
     }
 
     public Department(String name, String location) {
+        super();
         setName(name);
         setLocation(location);
     }
@@ -50,6 +52,12 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
     public void workEmployees() {
         for (int i = 0; i < currentIndex; i++) {
             employees[i].work();
+        }
+    }
+
+    public void payEmployee() {
+        for (int i = 0; i < currentIndex; i++) {
+            employees[i].pay();
         }
     }
 
@@ -75,7 +83,8 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
         this.location = location;
     }
 
-    public String toString() {
-        return "Department: name=" + getName() + ", location=" + getLocation();
+  @Override  public String toString() {
+
+        return getClass().getSimpleName() + ": name=" + getName() + ", location=" + getLocation();
     }
 }

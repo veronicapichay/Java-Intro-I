@@ -7,7 +7,6 @@ public class SalariedEmployee extends Employee {
 
     //inherited ctor
     public SalariedEmployee() {
-
     }
 
     public SalariedEmployee(String name, LocalDate hireDate) {
@@ -19,7 +18,10 @@ public class SalariedEmployee extends Employee {
         setSalary(salary);
     }
 
-
+    @Override
+    public void pay() {
+        System.out.println(getName() + " is paid salary " + getSalary());
+    }
 
     //accessor
     public double getSalary() {
@@ -32,6 +34,7 @@ public class SalariedEmployee extends Employee {
 
     @Override
     public String toString() {
-        return "Employee: " + getName() + " Hire date: " + getHireDate() + " Salary rate:  " + getSalary();
+        return super.toString() + getSalary();
+        //return "Employee: " + getName() + " Hire date: " + getHireDate() + " Salary rate:  " + getSalary();
     }
 }
