@@ -15,12 +15,15 @@ package gov.irs;
  */
 public class IRS {
     // what types of objects can this array contain?
+    //holding an instance of Corporation
     private TaxPayer[] payers = new TaxPayer[100];
     private int currentIndex = 0;  // for dealing with the array
 
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
             payers[i].payTaxes();
+            //will not work since taxpayer class has no getName method
+            //payers[i].getName();
         }
     }
     

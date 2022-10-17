@@ -16,9 +16,11 @@ package gov.irs;
  * are better left here.  This bends cohesion a bit, but strengthens open-closed:
  *   If the IRS were to change tax rates, we would only need to change that here.
  */
+//often public - all methods are auto public/abstract
+//class constants and 1 liners that ends in ;
 public interface TaxPayer {
     public static final double HOURLY_TAX_RATE = 0.25;
     public static final double SALARIED_TAX_RATE = 0.30;
-    
+
     public void payTaxes();
 }
