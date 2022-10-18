@@ -21,7 +21,13 @@ public class IRS {
 
     public void collectTaxes() {
         for (int i = 0; i < currentIndex; i++) {
-            payers[i].payTaxes();
+            double deduction = payers[i].getStandardDeduction();
+            System.out.println("Deduction is " + deduction);
+
+            payers[i].fileReturn();
+            payers[i].payTaxes(); //Reference -> Corp, HourlyEmp, SalariedEmp
+            System.out.println();
+
             //will not work since taxpayer class has no getName method
             //payers[i].getName();
         }
@@ -31,5 +37,6 @@ public class IRS {
     // what types of objects can be passed to this method?
     public void register(TaxPayer payer) {
         payers[currentIndex++] = payer;
+
     }
 }

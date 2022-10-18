@@ -25,6 +25,12 @@ public class Corporation implements TaxPayer {
         System.out.println(getName() + " paid no taxes - we lobbied hard and it worked");
     }
 
+    //Opt-in to override the default implementation inherited from TaxPlayer
+    @Override
+    public void fileReturn() { //interface TaxPayer
+        System.out.println("Return not filling! - we're looking for more loophole to not pay taxes!");
+    }
+
     public String getName() {
         return name;
     }

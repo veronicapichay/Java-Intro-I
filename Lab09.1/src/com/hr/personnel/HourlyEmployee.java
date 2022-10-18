@@ -29,6 +29,7 @@ public class HourlyEmployee extends Employee {
         System.out.println(getName() + " is paid hourly " + (getRate() * getHours()));
     }
 
+    @Override
     public void payTaxes() {
         System.out.println(getName() + " paid taxes of " + (getRate() * getHours() * HOURLY_TAX_RATE));
     }

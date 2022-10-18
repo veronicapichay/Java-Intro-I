@@ -13,6 +13,7 @@ public class SalariedEmployee extends Employee {
 
     public SalariedEmployee(String name, LocalDate hireDate) {
         super(name, hireDate);
+        //registerIn401k()
     }
 
     public SalariedEmployee(String name, LocalDate hireDate, double salary) {
@@ -33,6 +34,10 @@ public class SalariedEmployee extends Employee {
         System.out.println(getName() + " paid taxes of " + (getSalary() * SALARIED_TAX_RATE));
     }
 
+    @Override
+    public double getStandardDeduction() {
+        return DEFAULT_STANDARD_DEDUCTION;
+    }
 
     //accessor
     public double getSalary() {

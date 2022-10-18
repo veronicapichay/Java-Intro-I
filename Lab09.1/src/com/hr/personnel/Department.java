@@ -30,7 +30,7 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
     private int currentIndex = 0;  // for dealing with the array
 
     // constructors
-    public Department() {
+    public Department() { //a superclass ctor is always
         super();
     }
 
@@ -68,7 +68,7 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
 
     public void holidayBreak() {
         for (int i = 0; i < currentIndex; i++) {
-            //emp[i] is a reference of type Employee, can only call Employee methods
+            //employees[i] is a reference of type Employee, can only call Employee methods
 
             //NOTE: We must to a "type check" before blindly downcasting
             if (employees[i] instanceof SalariedEmployee) { //this is an IS-A check, or match
