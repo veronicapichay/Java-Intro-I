@@ -21,8 +21,7 @@ import java.util.Collection;
 public class IRS {
     // what types of objects can this array contain?
     //holding an instance of Corporation
-    Collection<TaxPayer> payers = new ArrayList<>();
-
+   private final Collection<TaxPayer> payers = new ArrayList<>();
 
     public void collectTaxes() {
         for(TaxPayer payer : payers) {

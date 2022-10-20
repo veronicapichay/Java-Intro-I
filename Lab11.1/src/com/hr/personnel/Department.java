@@ -29,7 +29,7 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
     // fields
     private String name;
     private String location;
-    Collection <Employee> employees = new ArrayList<>();
+    private final Collection <Employee> employees = new ArrayList<>();
 
 
     // constructors
@@ -45,8 +45,6 @@ public class Department { //a dept object has many emp working in 1 dept - 1 to 
 
     // business methods
     public void listEmployees() {
-        // Note: we don't use for-each here because we only want to access the array where employees were added.
-        // Question: what is in the array for indices where no Employee was added?  null!
         for(Employee emp : employees) {
             System.out.println(emp); // toString() automatically called
         }
